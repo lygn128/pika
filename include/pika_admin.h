@@ -315,6 +315,23 @@ class SlowlogCmd : public Cmd {
   }
 };
 
+
+class MultiCmd : public  Cmd {
+public:
+    MultiCmd() {}
+    virtual void Do();
+private:
+    virtual void DoInitial(const PikaCmdArgsType &argvs, const CmdInfo* const ptr_info);
+};
+
+class ExecCmd : public  Cmd {
+public:
+    ExecCmd() {}
+    virtual void Do();
+private:
+    virtual void DoInitial(const PikaCmdArgsType &argvs, const CmdInfo* const ptr_info);
+};
+
 #ifdef TCMALLOC_EXTENSION
 class TcmallocCmd : public Cmd {
  public:

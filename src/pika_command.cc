@@ -444,6 +444,15 @@ void InitCmdInfoTable() {
   //PubSub
   CmdInfo* pubsubptr = new CmdInfo(kCmdNamePubSub, -2, kCmdFlagsRead | kCmdFlagsPubSub);
   cmd_infos.insert(std::pair<std::string, CmdInfo*>(kCmdNamePubSub, pubsubptr));
+
+
+  CmdInfo*mult = new CmdInfo(kCmdNameMulti, 1 , kCmdFlagsRead);
+  cmd_infos.insert(std::pair<std::string, CmdInfo*>(kCmdNameMulti, mult));
+
+  CmdInfo*exec = new CmdInfo(kCmdNameExec, 1 , kCmdFlagsRead);
+  cmd_infos.insert(std::pair<std::string, CmdInfo*>(kCmdNameExec, exec));
+
+
 }
 
 void DestoryCmdInfoTable() {
@@ -886,6 +895,13 @@ void InitCmdTable(std::unordered_map<std::string, Cmd*> *cmd_table) {
   ////PubSub
   Cmd * pubsubptr = new PubSubCmd();
   cmd_table->insert(std::pair<std::string, Cmd*>(kCmdNamePubSub, pubsubptr));
+  // other
+  Cmd * multiptr = new MultiCmd();
+  cmd_table->insert(std::pair<std::string,Cmd*>(kCmdNameMulti, multiptr));
+
+  Cmd * execpptr = new ExecCmd();
+  cmd_table->insert(std::pair<std::string,Cmd*>(kCmdNameExec, execpptr));
+
 }
 
 Cmd* GetCmdFromTable(const std::string& opt, const CmdTable& cmd_table) {

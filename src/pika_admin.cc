@@ -344,6 +344,7 @@ void PingCmd::DoInitial(const PikaCmdArgsType &argv, const CmdInfo* const ptr_in
     return;
   }
 }
+
 void PingCmd::Do() {
   res_.SetRes(CmdRes::kPong);
 }
@@ -466,6 +467,26 @@ void ShutdownCmd::Do() {
   g_pika_server->Exit();
   res_.SetRes(CmdRes::kNone);
 }
+
+
+
+void MultiCmd::Do() {
+  res_.SetRes(CmdRes::kOk);
+}
+
+void MultiCmd::DoInitial(const PikaCmdArgsType &argvs, const CmdInfo *const ptr_info) {
+
+}
+
+void ExecCmd::Do() {
+  res_.SetRes(CmdRes::kOk);
+}
+
+void ExecCmd::DoInitial(const PikaCmdArgsType &argvs, const CmdInfo *const ptr_info) {
+
+}
+
+
 
 const std::string InfoCmd::kInfoSection = "info";
 const std::string InfoCmd::kAllSection = "all";

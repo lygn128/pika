@@ -206,6 +206,11 @@ const std::string kCmdNamePubSub = "pubsub";
 const std::string kCmdNamePSubscribe = "psubscribe";
 const std::string kCmdNamePUnSubscribe = "punsubscribe";
 
+
+//myaddd
+const std::string kCmdNameMulti = "multi";
+const std::string kCmdNameExec  = "exec";
+
 typedef pink::RedisCmdArgsType PikaCmdArgsType;
 static const int RAW_ARGS_LEN = 1024 * 1024; 
 
