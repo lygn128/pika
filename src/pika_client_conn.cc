@@ -53,7 +53,7 @@ std::string PikaClientConn::DoCmd(const PikaCmdArgsType& argv,
   // Get command info
   const CmdInfo* const cinfo_ptr = GetCmdInfo(opt);
   Cmd* c_ptr = g_pika_cmd_table_manager->GetCmd(opt);
-  std::cout << c_ptr << " " << opt << std::endl;
+  //std::cout << c_ptr << " " << opt << std::endl;
 
   if (!cinfo_ptr || !c_ptr) {
       return "-Err unknown or unsupported command \'" + opt + "\'\r\n";
